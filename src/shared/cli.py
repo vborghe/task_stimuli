@@ -107,7 +107,7 @@ def main_loop(all_tasks,
     exp_win.mouseVisible = False
 
     if show_ctl_win:
-        ctl_win = visual.Window(**config.CTL_WINDOW)
+        ctl_win = visual.Window(**config.CTL_WINDOW, share=exp_win)
         ctl_win.name = 'Stimuli'
     else:
         ctl_win = None
