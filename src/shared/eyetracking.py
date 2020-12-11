@@ -46,8 +46,8 @@ CAPTURE_SETTINGS = {
     "exposure_time": 4000,
     "global_gain": 1,
     "gev_packet_size": 2000,
-    "uid": "Aravis-Fake-GV01",  # for test purposes
-    # "uid": "MRC Systems GmbH-GVRD-MRC HighSpeed-MR_CAM_HS_0014",
+    #"uid": "Aravis-Fake-GV01",  # for test purposes
+     "uid": "MRC Systems GmbH-GVRD-MRC HighSpeed-MR_CAM_HS_0014",
 }
 
 
@@ -276,7 +276,7 @@ class EyeTrackerClient(threading.Thread):
         )
 
         # stop a bunch of eye plugins for performance
-        for plugin in ["NDSI_Manager", "Detector3DPlugin"]:
+        for plugin in ["NDSI_Manager", "Pye3DPlugin"]:
             self.send_recv_notification(
                 {
                     "subject": "stop_eye_plugin",
