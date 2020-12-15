@@ -45,7 +45,7 @@ CAPTURE_SETTINGS = {
     "frame_rate": 250,
     "exposure_time": 4000,
     "global_gain": 1,
-    "gev_packet_size": 2000,
+    "gev_packet_size": 9136,
     #"uid": "Aravis-Fake-GV01",  # for test purposes
      "uid": "MRC Systems GmbH-GVRD-MRC HighSpeed-MR_CAM_HS_0014",
 }
@@ -135,6 +135,7 @@ Please look at the markers that appear on the screen."""
         self.eyetracker.set_pupil_cb(self._pupil_cb)
 
         while not len(self._pupils_list):  # wait until we get at least a pupil
+            print('no pupil')
             yield False
 
         exp_win.logOnFlip(
@@ -350,7 +351,7 @@ class EyeTrackerClient(threading.Thread):
                             self._pupil_cb(tmp)
                     elif topic.startswith("gaze"):
                         self.gaze = tmp
-            time.sleep(1 / 120.0)
+            time.sleep(1 / 1000.0)
         logging.info("eyetracker listener: stopping")
 
     def set_pupil_cb(self, pupil_cb):
