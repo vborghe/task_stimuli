@@ -135,7 +135,6 @@ Please look at the markers that appear on the screen."""
         self.eyetracker.set_pupil_cb(self._pupil_cb)
 
         while not len(self._pupils_list):  # wait until we get at least a pupil
-            print('no pupil')
             yield False
 
         exp_win.logOnFlip(
