@@ -1,7 +1,7 @@
 import os, sys, datetime, time
 import threading
 
-from .zmq_tools import *
+#from .zmq_tools import *
 import msgpack
 
 import numpy as np

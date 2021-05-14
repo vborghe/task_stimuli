@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 from subprocess import Popen
-
 import os, sys, importlib
-
 from src.shared import parser, config, screen
 
 def run(parsed):
